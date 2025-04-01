@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Shilpas Ayurvedic Clinic</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('https://images.pexels.com/photos/4498225/pexels-photo-4498225.jpeg') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+        header {
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .btn {
+            background: white;
+            color: #4CAF50;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            background: url('https://images.pexels.com/photos/3217186/pexels-photo-3217186.jpeg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .preview {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .preview img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 20px;
+            border-radius: 10px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Dr. Shilpa Ayurvedic Clinic</div>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://wa.me/yourwhatsappphonenumber" class="btn">Book an Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="overlay">
+            <h1>Ayurvedic Medicine</h1>
+            <p>Helping you regain balance and wellness through natural treatments.</p>
+            <a href="mailto:youremail@example.com" class="btn">Contact Us</a>
+        </div>
+    </section>
+    
+    <section class="preview">
+        <img src="https://images.pexels.com/photos/4033326/pexels-photo-4033326.jpeg" alt="Herbal Medicine Preview">
+    </section>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer holistic approaches to health and wellness.</p>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Dr. Shilpa is dedicated to natural healing and patient wellness.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Schedule your free 15-minute discovery call today!</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Dr. Shilpa Ayurvedic Clinic. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
