@@ -3,146 +3,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Shilpas Ayurvedic Clinic</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Ayurveda Wellness | Online Ayurvedic Consultation</title>
+    <meta name="description" content="Get authentic Ayurvedic consultations online with experienced Kerala doctors for holistic health solutions.">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Base Styles */
+        :root {
+            --primary: #1ABC9C;
+            --primary-dark: #16A085;
+            --secondary: #28a745;
+            --light: #F9F9F9;
+            --dark: #333;
+            --gray: #777;
+            --light-gray: #EEE;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background: url('https://images.pexels.com/photos/4498225/pexels-photo-4498225.jpeg') no-repeat center center/cover;
-            background-attachment: fixed;
+            font-family: 'Roboto', 'Source Sans Pro', sans-serif;
         }
-        header {
-            background: rgba(76, 175, 80, 0.9);
+        
+        body {
+            background-color: #FFF;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--secondary);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
             color: white;
-            padding: 15px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #063354;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
+        
+        .logo img {
+            height: 40px;
         }
+        
         nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
             display: flex;
+            list-style: none;
         }
+        
         nav ul li {
-            margin: 0 15px;
+            margin-left: 25px;
         }
+        
         nav ul li a {
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .login-btn {
+            background: var(--primary);
             color: white;
-            text-decoration: none;
-            font-size: 18px;
+            padding: 8px 20px;
+            border-radius: 30px;
         }
-        .btn {
-            background: white;
-            color: #4CAF50;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
+        
+        .login-btn:hover {
+            background: var(--primary-dark);
+            color: white;
         }
+        
+        /* Hero Section */
         .hero {
-            background: url('https://images.pexels.com/photos/3217186/pexels-photo-3217186.jpeg') no-repeat center center/cover;
-            height: 400px;
+            background: var(--light) url('https://example.com/ayurveda-doctor-illustration.svg') no-repeat right center;
+            background-size: contain;
+            padding: 180px 0 100px;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        /* Appointment Form */
+        .appointment-section {
+            margin-top: -150px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .appointment-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 60px rgba(8, 70, 120, 0.15);
+            padding: 60px;
+        }
+        
+        .form-title {
+            margin-bottom: 20px;
+        }
+        
+        .form-title h4 {
+            color: var(--gray);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .form-title h3 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Date Tabs */
+        .date-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .date-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+        }
+        
+        .date-tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        /* Time Slots */
+        .time-slots {
+            display: none;
+        }
+        
+        .time-slots.active {
+            display: block;
+        }
+        
+        .time-slot {
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .time-slot input[type="radio"] {
+            display: none;
+        }
+        
+        .time-slot label {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--light);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .time-slot input[type="radio"]:checked + label {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .time-slot.disabled label {
+            background: #F5F5F5;
+            color: #CCC;
+            text-decoration: line-through;
+            cursor: not-allowed;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-img {
+            height: 180px;
+            background: var(--light);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
         }
-        .overlay {
-            background: rgba(0, 0, 0, 0.5);
+        
+        .service-img img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+        
+        .service-content {
             padding: 20px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        .preview {
-            text-align: center;
-            margin: 30px 0;
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
         }
-        .preview img {
+        
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .testimonial-img img {
             width: 100%;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            object-fit: cover;
         }
-        section {
-            padding: 50px 20px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.8);
-            margin: 20px;
-            border-radius: 10px;
+        
+        .testimonial-author h4 {
+            margin-bottom: 5px;
+            font-size: 18px;
         }
+        
+        .testimonial-author p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        /* Footer */
         footer {
-            background: #333;
+            background: var(--secondary);
             color: white;
-            text-align: center;
-            padding: 15px;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
             margin-top: 20px;
         }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero {
+                background-position: right -100px center;
+            }
+        }
+        
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
+            .hero {
+                background-image: none;
                 text-align: center;
+                padding: 120px 0 60px;
             }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
             nav ul {
-                flex-direction: column;
+                display: none;
             }
-            nav ul li {
-                margin: 10px 0;
+            
+            .appointment-card {
+                padding: 30px;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">Dr. Shilpa Ayurvedic Clinic</div>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://wa.me/yourwhatsappphonenumber" class="btn">Book an Appointment</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://example.com/ayurveda-logo.svg" alt="Ayurveda Wellness Logo">
+            </div>
+            <nav>
+                
+            </nav>
+        </div>
     </header>
     
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="overlay">
-            <h1>Ayurvedic Medicine</h1>
-            <p>Helping you regain balance and wellness through natural treatments.</p>
-            <a href="mailto:youremail@example.com" class="btn">Contact Us</a>
+        <div class="container">
+            <div class="hero-content">
+                <h5>Traditional Healing</h5>
+                <h1>Ayurvedic Care for Your Wellness Journey</h1>
+                <p>Connect with experienced Ayurveda doctors from Kerala for personalized holistic health solutions through online consultations.</p>
+               <br>
+               <br>
+            </div>
         </div>
     </section>
-    
-    <section class="preview">
-        <img src="https://images.pexels.com/photos/4033326/pexels-photo-4033326.jpeg" alt="Herbal Medicine Preview">
+ <br>
+ <br>
+    <!-- Appointment Section -->
+    <section id="appointment" class="appointment-section">
+        <div class="container">
+            <div class="appointment-card">
+                <div class="form-title">
+                    <h4>Online Consultation</h4>
+                    <h3>Make an Appointment</h3>
+                    <p>Enter your details to connect with an Ayurveda doctor</p>
+                </div>
+                
+                <form>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" value="+91" required>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                       
+                        
+                        <div class="time-slots active">
+                            <div class="time-slot">
+                                <input type="radio" name="time" id="time1" checked>
+                                <label for="time1">10:00 AM</label>
+                            </div>
+                            <div class="time-slot">
+                                <input type="radio" name="time" id="time2">
+                                <label for="time2">10:30 AM</label>
+                            </div>
+                            <div class="time-slot">
+                                <input type="radio" name="time" id="time3">
+                                <label for="time3">11:00 AM</label>
+                            </div>
+                            <div class="time-slot">
+                                <input type="radio" name="time" id="time4">
+                                <label for="time4">11:30 AM</label>
+                            </div>
+                            <div class="time-slot disabled">
+                                <input type="radio" name="time" id="time5" disabled>
+                                <label for="time5">12:30 PM</label>
+                            </div>
+                        </div>
+                        
+                        <div class="time-slots">
+                            <!-- Time slots for 05 Apr would go here -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Purpose of visit"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Book Appointment</button>
+                </form>
+            </div>
+        </div>
     </section>
-    
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>We offer holistic approaches to health and wellness.</p>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Ayurvedic Services</h2>
+                <p>Holistic treatments for complete wellness</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://example.com/icons/kaya-chikitsa.svg" alt="Kaya Chikitsa">
+                    </div>
+                    <div class="service-content">
+                        <h3>Kaya Chikitsa</h3>
+                        <p>General medicine and internal treatments for overall health</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://example.com/icons/rasayana.svg" alt="Rasayana">
+                    </div>
+                    <div class="service-content">
+                        <h3>Rasayana</h3>
+                        <p>Rejuvenation therapies for vitality and longevity</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://example.com/icons/vajikarana.svg" alt="Vajikarana">
+                    </div>
+                    <div class="service-content">
+                        <h3>Vajikarana</h3>
+                        <p>Specialized treatments for reproductive health</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://example.com/icons/panchakarma.svg" alt="Panchakarma">
+                    </div>
+                    <div class="service-content">
+                        <h3>Panchakarma</h3>
+                        <p>Detoxification and purification therapies</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Dr. Shilpa is dedicated to natural healing and patient wellness.</p>
+
+    <!-- How It Works Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Simple steps to better health</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Book Appointment</h3>
+                    <p>Choose a convenient time slot for your consultation</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Consult Online</h3>
+                    <p>Video call with our Ayurveda doctor at scheduled time</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Receive Treatment Plan</h3>
+                    <p>Get personalized diet, lifestyle and herbal recommendations</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Follow-up Care</h3>
+                    <p>Regular check-ins to monitor your progress</p>
+                </div>
+            </div>
+        </div>
     </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Schedule your free 15-minute discovery call today!</p>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Patients Say</h2>
+                <p>Real experiences from our community</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-img">
+                            <img src="https://example.com/testimonials/user1.jpg" alt="Patient">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Rajeev Kumar</h4>
+                            <p>Government Employee</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The doctor was very knowledgeable and took time to understand my condition. The treatment plan has significantly improved my digestive issues."</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-img">
+                            <img src="https://example.com/testimonials/user2.jpg" alt="Patient">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Chitra Menon</h4>
+                            <p>IT Professional</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"As an NRI, it was difficult to find authentic Ayurvedic care. This platform connected me with a wonderful doctor from Kerala. Highly recommended!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-img">
+                            <img src="https://example.com/testimonials/user3.jpg" alt="Patient">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Dinu M.</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The online consultation was seamless and the medicines were delivered to my doorstep. My joint pain has reduced considerably after 3 months of treatment."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ayurveda Insights</h2>
+                <p>Latest articles on holistic health</p>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://example.com/blog/ayurveda-summer.jpg" alt="Ayurveda for Summer">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Ayurvedic Tips for Summer Wellness</h3>
+                        <p>Learn how to balance Pitta dosha during hot months with diet and lifestyle changes.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://example.com/blog/turmeric-benefits.jpg" alt="Turmeric Benefits">
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Healing Power of Turmeric</h3>
+                        <p>Discover the multiple health benefits of this golden spice in Ayurveda.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://example.com/blog/daily-routine.jpg" alt="Ayurvedic Routine">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Creating an Ayurvedic Daily Routine</h3>
+                        <p>Simple practices to align your day with natural rhythms for optimal health.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Dr. Shilpa Ayurvedic Clinic. All Rights Reserved.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>123 Ayurveda Lane<br>
+                    Kochi, Kerala 682001<br>
+                    India</p>
+                    <p>Phone: +91 9876543210<br>
+                    Email: info@ayurvedawellness.com</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+               
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Ayurveda Wellness. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Simple script for date tabs
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateTabs = document.querySelectorAll('.date-tab');
+            
+            dateTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    dateTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Here you would typically show the corresponding time slots
+                    // This is just a basic implementation
+                });
+            });
+        });
+    </script>
 </body>
 </html>
